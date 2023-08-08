@@ -1,0 +1,26 @@
+﻿@model VideoGame
+
+<h3>@Model.Name Information</h3>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Current Price</th>
+        <th>Publisher</th>
+        <th>Released Date</th>
+        <th>Genre</th>
+    </tr>
+    <tr>
+        <td>@Model.id</td>
+        <td>@Model.Name</td>
+        <td>@Model.CurrentPrice</td>
+        <td>@Model.Publisher</td>
+        <td>@Model.ReleasedDate</td>
+        <td>@Model.Genre</td>
+    </tr>
+</table>
+
+<div style="display: block">
+    <a href="/VideoGame/UpdateVideoGame/@Model.id">Update this Video Game</a>
+</div>

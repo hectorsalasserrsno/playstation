@@ -1,0 +1,27 @@
+﻿@model VideoGame
+
+<h2>Create a New VideoGame</h2>
+
+@using (Html.BeginForm("InsertVideoGameToDatabase", "VideoGame", "Post"))
+{
+    <input asp-for="id" type="hidden" value="" />
+
+    <label asp-for="Name" class="control-label">Name</label>
+    <input type="text" name="Name" class="form-control" value="" />
+
+    <label asp-for="CurrentPrice" class="control-label">Current Price</label>
+    <input type="number" step="0.01" name="CurrentPrice" class="form-control" />
+
+    <label asp-for="Publisher" class="control-label">Publisher</label>
+    <input type="text" name="Publisher" class="form-control" value="" />
+
+    <label asp-for="ReleasedDate" class="control-label">Released Date</label>
+    <input type="date" name="Released Date" class="form-control" value="" />
+
+    <label asp-for="Genre" class="control-label">Genre</label>
+    <input type="text" name="Genre" class="form-control" value="" />
+      
+
+    <input type="submit" value="Create VideoGame" class="btn btn-primary" />
+}
+

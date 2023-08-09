@@ -36,13 +36,22 @@ namespace playstation.Controllers
             }
             return View(video);
         }
-            public IActionResult UpdateVideoGameToDatabase(VideoGame videogame)
-            {
-             repo.UpdateVideoGame(videogame);
+        public IActionResult UpdateVideoGameToDatabase(VideoGame videogame)
+        {
+            repo.UpdateVideoGame(videogame);
 
-                return RedirectToAction("ViewVideoGame", new { id = videogame.id });
-            }
-        
+            return RedirectToAction("ViewVideoGame", new { id = videogame.id });
+        }
+        public IActionResult InsertVideoGame()
+        {
+            var vidGame = new VideoGame();
+            return View(vidGame);
+        }
+        public IActionResult InsertVideoGameToDatabase(VideoGame videogameToInsert)
+        {
+            repo.InsertVideoGame(videogameToInsert);
+            return RedirectToAction("Index");
+        }
     }
 
 }

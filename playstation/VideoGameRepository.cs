@@ -14,13 +14,25 @@ namespace playstation
             _conn = conn;
         }
 
+
         public IEnumerable<VideoGame> GetAllVideoGames()
         {
             return _conn.Query<VideoGame>("SELECT * FROM videogames;");
         }
+
+       
+
         public VideoGame GetVideoGame(int id)
         {
             return _conn.QuerySingle<VideoGame>("SELECT * FROM videogames WHERE id = @id;", new { id = id });
+        }
+
+        public void InsertVideoGame(VideoGame videoGameToInsert)
+        {
+            _conn.Execute("INSERT INTO videogames (NAME, CURRENTPRICE, PUBLISHER, RELEASEDDATE, GENRE) VALUES (@name, @currentprice, @publisher," +
+                " @releasedDate, @genre);",
+        new { name = videoGameToInsert.Name, currentprice = videoGameToInsert.CurrentPrice, publisher = videoGameToInsert.Publisher,
+            releaseddate = videoGameToInsert.ReleasedDate, genre = videoGameToInsert.Genre });
         }
 
         public void UpdateVideoGame(VideoGame videogame)
@@ -33,6 +45,6 @@ namespace playstation
                  releasedDate = videogame.ReleasedDate, genre = videogame.Genre });
         }
 
- 
+        
     }
 }

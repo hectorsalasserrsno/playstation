@@ -9,6 +9,6 @@
         public DateTime ReleasedDate { get; set; }
         public string Genre { get; set; }
 
-
+        //public IEnumerable<Category> Categories { get; set; }
     }
 }

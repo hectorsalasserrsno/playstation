@@ -10,6 +10,9 @@ namespace playstation
         public VideoGame GetVideoGame(int id);
 
         public void UpdateVideoGame(VideoGame videoGame);
+
+        public void InsertVideoGame(VideoGame videoGameToInsert);
+
         
     }
     

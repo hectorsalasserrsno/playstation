@@ -14,6 +14,10 @@ namespace playstation
             _conn = conn;
         }
 
+        public void DeleteVideoGame(VideoGame videogame)
+        {
+            _conn.Execute("DELETE FROM videogames WHERE id= @id;", new { id = videogame.id });
+        }
 
         public IEnumerable<VideoGame> GetAllVideoGames()
         {

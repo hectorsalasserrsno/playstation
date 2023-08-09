@@ -52,6 +52,12 @@ namespace playstation.Controllers
             repo.InsertVideoGame(videogameToInsert);
             return RedirectToAction("Index");
         }
+
+        public IActionResult DeleteVideoGame(VideoGame videogame)
+        {
+            repo.DeleteVideoGame(videogame);
+            return RedirectToAction("Index");
+        }
     }
 
 }

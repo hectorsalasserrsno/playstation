@@ -24,3 +24,12 @@
 <div style="display: block">
     <a href="/VideoGame/UpdateVideoGame/@Model.id">Update this Video Game</a>
 </div>
+
+<div style="display: block">
+
+    @using (Html.BeginForm("DeleteVideoGame", "VideoGame", "Post"))
+    {
+        <input type="hidden" asp-for="id" value="@Model.id" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this product" />
+    }
+</div>

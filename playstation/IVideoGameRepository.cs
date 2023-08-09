@@ -13,7 +13,7 @@ namespace playstation
 
         public void InsertVideoGame(VideoGame videoGameToInsert);
 
-        
+        public void DeleteVideoGame(VideoGame videogame);
     }
     
 }

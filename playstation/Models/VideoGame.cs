@@ -1,4 +1,6 @@
-﻿namespace playstation.Models
+﻿using Microsoft.VisualBasic;
+
+namespace playstation.Models
 {
     public class VideoGame
     {
